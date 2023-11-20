@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class WisataDataModel {
   String? id;
   String? nama;
@@ -11,7 +13,6 @@ class WisataDataModel {
       this.telepon, this.tiket);
 }
 
-final List<WisataDataModel> _listWisata = [];
 
 final List<Map<String, String>> listData = [
   {
@@ -98,7 +99,8 @@ final List<Map<String, String>> listData = [
         'Jl. Raya Matesih-Tawangmangu No.16, Gondosuli Kidul, Tawangmangu, Kec. Tawangmangu, Kabupaten Karanganyar, Jawa Tengah 57792',
     'nama': 'Taman Sakura Hills Tawangmangu',
     'image': 'image/sakura.jpg',
-    'deskripsi': 'Taman Sakura Hills Tawangmangu merupakan salah satu wisata alam yang memadukan konsep alam ala negara Jepang dengan pesona Gunung Lawu yang terletak di Jalan Tawangmangu–Magetan, Kecamatan Tawangmangu, Kabupaten Karanganyar. Taman Sakura Hills Tawangmangu buka setiap hari mulai pukul 08.00-16.00 WIB. Harga tiket masuk untuk wisatawan lokal dan mancanegara untuk weekday dewasa Rp.20.000 anak-anak Rp.15.000, untuk weekend dewasa Rp.25.000 anak- anak Rp.15.000 per orang. Taman Sakura Hills Tawangmangu memiliki fasilitas yang cukup lengkap meliputi, area berfoto, cinema 3D, tempat penyewaan mobil jeep, perahu, dan kimono, penginapan, restoran, mushola, toilet dan lahan parkir yang luas. Untuk informasi lebih lanjut, bisa menghubungi nomor +62813-9520-6060 atau mengunjungi media sosial Taman Sakura Hills Tawangmangu di @sakurahills_tawangmangu via Instagram. ',
+    'deskripsi':
+        'Taman Sakura Hills Tawangmangu merupakan salah satu wisata alam yang memadukan konsep alam ala negara Jepang dengan pesona Gunung Lawu yang terletak di Jalan Tawangmangu–Magetan, Kecamatan Tawangmangu, Kabupaten Karanganyar. Taman Sakura Hills Tawangmangu buka setiap hari mulai pukul 08.00-16.00 WIB. Harga tiket masuk untuk wisatawan lokal dan mancanegara untuk weekday dewasa Rp.20.000 anak-anak Rp.15.000, untuk weekend dewasa Rp.25.000 anak- anak Rp.15.000 per orang. Taman Sakura Hills Tawangmangu memiliki fasilitas yang cukup lengkap meliputi, area berfoto, cinema 3D, tempat penyewaan mobil jeep, perahu, dan kimono, penginapan, restoran, mushola, toilet dan lahan parkir yang luas. Untuk informasi lebih lanjut, bisa menghubungi nomor +62813-9520-6060 atau mengunjungi media sosial Taman Sakura Hills Tawangmangu di @sakurahills_tawangmangu via Instagram. ',
     'telepon': ' +62813-9520-6060',
     'tiket': 'Rp.15.000,00 - Rp.25.000,00',
   }

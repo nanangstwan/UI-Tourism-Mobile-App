@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:projek_wisata/detailpage.dart';
 import 'package:projek_wisata/dummydata.dart';
 
@@ -8,20 +7,22 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints constraints) {
-      if (constraints.maxWidth <= 600) {
-        return const MyHome(
-          gridCount: 2,
-        );
-      } else if (constraints.maxWidth <= 1200) {
-        return const MyHome(gridCount: 4);
-      } else {
-        return const MyHome(
-          gridCount: 6,
-        );
-      }
-    }));
+    return Scaffold(
+      body: LayoutBuilder(
+          builder: (BuildContext context, BoxConstraints constraints) {
+        if (constraints.maxWidth <= 600) {
+          return const MyHome(
+            gridCount: 2,
+          );
+        } else if (constraints.maxWidth <= 1200) {
+          return const MyHome(gridCount: 4);
+        } else {
+          return const MyHome(
+            gridCount: 6,
+          );
+        }
+      }),
+    );
   }
 }
 
@@ -34,6 +35,29 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHome> {
+  List<Map<String, String>> findData = [];
+  @override
+  void initState() {
+    findData = listData;
+    super.initState();
+  }
+
+  void filterData(String keyword) {
+    List<Map<String, String>> result = [];
+    if (keyword.isEmpty) {
+      result = listData;
+    } else {
+      result = listData
+          .where((wisata) =>
+              wisata['nama']?.toLowerCase().contains(keyword.toLowerCase()) ??
+              false)
+          .toList();
+    }
+    setState(() {
+      findData = result;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -43,7 +67,6 @@ class _MyHomeState extends State<MyHome> {
           child: Column(
             children: [
               Container(
-                height: 270,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -70,6 +93,17 @@ class _MyHomeState extends State<MyHome> {
                   ],
                 ),
               ),
+              const SizedBox(height: 30),
+              TextField(
+                onChanged: (value) => filterData(value),
+                decoration: InputDecoration(
+                  prefixIcon: const Icon(Icons.search),
+                  hintText: 'Search',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              ),
               Container(
                 height: 150,
                 child: ListView(
@@ -87,7 +121,7 @@ class _MyHomeState extends State<MyHome> {
                   childAspectRatio: 2 / 3,
                   mainAxisSpacing: 10,
                   crossAxisSpacing: 10,
-                  children: listData
+                  children: findData
                       .map(
                         (item) => InkWell(
                           onTap: () {
@@ -132,7 +166,7 @@ class _MyHomeState extends State<MyHome> {
                                   ),
                                 ),
                                 child: Align(
-                                  alignment: AlignmentDirectional(-0.7, 0.7),
+                                  alignment: const AlignmentDirectional(-0.7, 0.7),
                                   child: Text(
                                     '${item['nama']}',
                                     style: const TextStyle(
@@ -174,7 +208,7 @@ class _MyHomeState extends State<MyHome> {
           ],
         ),
         child: Align(
-            alignment: AlignmentDirectional(0.0, 0.8),
+            alignment: const AlignmentDirectional(0.0, 0.8),
             child: Text(
               kata,
               style: const TextStyle(

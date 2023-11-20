@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:projek_wisata/dummydata.dart';
 
-class DetailPage extends StatefulWidget {
-  final WisataDataModel dataModel;
+
+class DetailPage extends StatelessWidget {
+  final WisataDataModel dataModel; 
   const DetailPage({Key? key, required this.dataModel}) : super(key: key);
 
   @override
-  State<DetailPage> createState() => DdetailPageState();
-}
-
-class DdetailPageState extends State<DetailPage> {
-  @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
         body: Stack(
       children: [
@@ -21,7 +18,7 @@ class DdetailPageState extends State<DetailPage> {
           decoration: BoxDecoration(
             color: Colors.grey,
             image: DecorationImage(
-              image: AssetImage(widget.dataModel.image ?? ''),
+              image: AssetImage(dataModel.image ?? ''),
               fit: BoxFit.cover,
             ),
           ),
@@ -29,7 +26,7 @@ class DdetailPageState extends State<DetailPage> {
         SizedBox(
           width: MediaQuery.of(context).size.width,
           // height: 500,
-          child: Image.asset(widget.dataModel.image ?? ''),
+          child: Image.asset(dataModel.image ?? ''),
         ),
         Padding(
           padding: const EdgeInsets.only(left: 20, top: 50),
@@ -37,20 +34,22 @@ class DdetailPageState extends State<DetailPage> {
             onPressed: () {
               Navigator.of(context).pop();
             },
-            child: Icon(Icons.arrow_back_ios_new, color: Colors.white,),
+            child: Icon(
+              Icons.arrow_back_ios_new,
+              color: Colors.white,
+            ),
             style: ElevatedButton.styleFrom(
                 shape: const CircleBorder(),
                 padding: const EdgeInsets.all(15),
                 backgroundColor: Colors.transparent),
           ),
         ),
-        scroll(),
+        scroll(context),
       ],
     ));
   }
-
-  scroll() {
-    final mediaQuery = MediaQuery.of(context);
+  scroll(BuildContext context) {
+    final Size mediaQuery = MediaQuery.of(context).size;
     return DraggableScrollableSheet(
         initialChildSize: 0.6,
         maxChildSize: 0.9,
@@ -79,7 +78,7 @@ class DdetailPageState extends State<DetailPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              widget.dataModel.nama ?? '',
+                              dataModel.nama ?? '',
                               style: const TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 30,
@@ -95,7 +94,7 @@ class DdetailPageState extends State<DetailPage> {
                                 const SizedBox(width: 10),
                                 Expanded(
                                   child: Text(
-                                    widget.dataModel.alamat ?? '',
+                                    dataModel.alamat ?? '',
                                     style: const TextStyle(fontSize: 15),
                                   ),
                                 ),
@@ -124,7 +123,7 @@ class DdetailPageState extends State<DetailPage> {
                                 ),
                                 const SizedBox(width: 10),
                                 Text(
-                                  widget.dataModel.telepon ?? '',
+                                  dataModel.telepon ?? '',
                                   style: const TextStyle(fontSize: 15),
                                 ),
                               ],
@@ -138,7 +137,7 @@ class DdetailPageState extends State<DetailPage> {
                                 ),
                                 const SizedBox(width: 10),
                                 Text(
-                                  widget.dataModel.tiket ?? '',
+                                  dataModel.tiket ?? '',
                                   style: const TextStyle(fontSize: 15),
                                 ),
                               ],
@@ -151,7 +150,7 @@ class DdetailPageState extends State<DetailPage> {
                             ),
                             const SizedBox(height: 10),
                             Text(
-                              widget.dataModel.deskripsi ?? '',
+                              dataModel.deskripsi ?? '',
                               style: const TextStyle(fontSize: 15),
                             ),
                           ],
@@ -177,10 +176,11 @@ class DdetailPageState extends State<DetailPage> {
                           InkWell(
                             onTap: () {},
                             child: Container(
-                              width: mediaQuery.size.width/2.6,
+                              width: mediaQuery.width / 2.6,
                               height: 55,
                               decoration: BoxDecoration(
-                                border: Border.all(color: Colors.green.shade600),
+                                border:
+                                    Border.all(color: Colors.green.shade600),
                                 // color: Colors.green.shade600,
                                 borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(25),
@@ -198,7 +198,7 @@ class DdetailPageState extends State<DetailPage> {
                                   Text(
                                     'Maps',
                                     style: TextStyle(
-                                        color: Colors.black, fontSize: 25),
+                                        color: Colors.black, fontSize: 20),
                                   ),
                                 ],
                               ),
@@ -207,7 +207,7 @@ class DdetailPageState extends State<DetailPage> {
                           InkWell(
                               onTap: () {},
                               child: Container(
-                                width: mediaQuery.size.width / 2.5,
+                                width: mediaQuery.width / 2.5,
                                 height: 55,
                                 decoration: BoxDecoration(
                                   color: Colors.green.shade600,
@@ -227,7 +227,7 @@ class DdetailPageState extends State<DetailPage> {
                                     Text(
                                       'WhatsApp',
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 25),
+                                          color: Colors.white, fontSize: 20),
                                     ),
                                   ],
                                 ),
