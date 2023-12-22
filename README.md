@@ -1,16 +1,16 @@
-# projek_wisata
-![Preview](/https://github.com/nanangstwan/UI-Tourism-Mobile-App/blob/master/image/1.3.jpg)
-A new Flutter project.
+# Tourism Mobile App
 
-## Getting Started
+application of tourist information system in Karanganyar Central Java Indonesia, this is an example of UI template. The content or content is not 100% correct.  
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Screen
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+=> Splash Screen
+=> Home Screen
+=> Detail Screen
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Photos
+
+![alt text](https://github.com/nanangstwan/UI-Tourism-Mobile-App/blob/master/image/1.3.jpg?raw=true)
+![alt text](https://github.com/nanangstwan/UI-Tourism-Mobile-App/blob/master/image/1.2.jpg?raw=true)
+![alt text](https://github.com/nanangstwan/UI-Tourism-Mobile-App/blob/master/image/1.3.jpg?raw=true)
