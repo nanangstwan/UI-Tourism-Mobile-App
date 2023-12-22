@@ -13,4 +13,4 @@ application of tourist information system in Karanganyar Central Java Indonesia,
 
 ![alt text](https://github.com/nanangstwan/UI-Tourism-Mobile-App/blob/master/image/1.3.jpg?raw=true)
 ![alt text](https://github.com/nanangstwan/UI-Tourism-Mobile-App/blob/master/image/1.2.jpg?raw=true)
-![alt text](https://github.com/nanangstwan/UI-Tourism-Mobile-App/blob/master/image/1.3.jpg?raw=true)
+![alt text](https://github.com/nanangstwan/UI-Tourism-Mobile-App/blob/master/image/1.1.jpg?raw=true)
