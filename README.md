@@ -1,5 +1,5 @@
 # projek_wisata
-![Preview](/1.1.jpg)
+![Preview](/https://github.com/nanangstwan/UI-Tourism-Mobile-App/blob/master/image/1.3.jpg)
 A new Flutter project.
 
 ## Getting Started
