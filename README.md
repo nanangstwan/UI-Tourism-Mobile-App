@@ -6,8 +6,11 @@ application of tourist information system in Karanganyar Central Java Indonesia,
 ## Screen
 
 => Splash Screen
+
 => Home Screen
+
 => Detail Screen
+
 
 ## Photos
 
