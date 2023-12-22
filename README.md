@@ -1,5 +1,5 @@
 # projek_wisata
-
+![Preview](/1.1.jpg)
 A new Flutter project.
 
 ## Getting Started
