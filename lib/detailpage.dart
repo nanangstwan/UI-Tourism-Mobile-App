@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:projek_wisata/dummydata.dart';
 
-
 class DetailPage extends StatelessWidget {
-  final WisataDataModel dataModel; 
+  final WisataDataModel dataModel;
   const DetailPage({Key? key, required this.dataModel}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
         body: Stack(
       children: [
@@ -48,6 +46,7 @@ class DetailPage extends StatelessWidget {
       ],
     ));
   }
+
   scroll(BuildContext context) {
     final Size mediaQuery = MediaQuery.of(context).size;
     return DraggableScrollableSheet(

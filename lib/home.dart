@@ -8,6 +8,7 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints constraints) {
         if (constraints.maxWidth <= 600) {
@@ -66,44 +67,42 @@ class _MyHomeState extends State<MyHome> {
           padding: const EdgeInsets.all(20),
           child: Column(
             children: [
-              Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'Selamat Menikmati Keindahan Alam di Karanganyar',
-                      style:
-                          TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Selamat Menikmati Keindahan Alam di Karanganyar',
+                    style:
+                        TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  ),
+                  const Text(
+                    'Indonesia',
+                    style: TextStyle(
+                      fontSize: 30,
+                      color: Colors.green,
+                      fontWeight: FontWeight.bold,
                     ),
-                    const Text(
-                      'Indonesia',
-                      style: TextStyle(
-                        fontSize: 40,
+                  ),
+                  Container(
+                    width: 200,
+                    height: 10,
+                    decoration: BoxDecoration(
                         color: Colors.green,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Container(
-                      width: 200,
-                      height: 10,
-                      decoration: BoxDecoration(
-                          color: Colors.green,
-                          borderRadius: BorderRadius.circular(20)),
-                    )
-                  ],
-                ),
+                        borderRadius: BorderRadius.circular(20)),
+                  )
+                ],
               ),
               const SizedBox(height: 30),
-              TextField(
-                onChanged: (value) => filterData(value),
-                decoration: InputDecoration(
-                  prefixIcon: const Icon(Icons.search),
-                  hintText: 'Search',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
+                TextField(
+                  onChanged: (value) => filterData(value),
+                  decoration: InputDecoration(
+                    prefixIcon: const Icon(Icons.search),
+                    hintText: 'Search',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                   ),
                 ),
-              ),
               Container(
                 height: 150,
                 child: ListView(
@@ -166,7 +165,8 @@ class _MyHomeState extends State<MyHome> {
                                   ),
                                 ),
                                 child: Align(
-                                  alignment: const AlignmentDirectional(-0.7, 0.7),
+                                  alignment:
+                                      const AlignmentDirectional(-0.7, 0.7),
                                   child: Text(
                                     '${item['nama']}',
                                     style: const TextStyle(

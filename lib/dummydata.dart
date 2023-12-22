@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class WisataDataModel {
   String? id;
   String? nama;
